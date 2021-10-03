@@ -1,0 +1,13 @@
+@import "../../../styles.scss";
+
+
+.cashout-home__container {
+  @include backgroundStyle();
+  padding-top: 13rem;
+
+  @include baseStyle();
+
+  .home__mess{
+    color: red;
+  }
+}

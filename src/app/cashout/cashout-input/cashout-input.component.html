@@ -1,0 +1,32 @@
+<div class="cashout-input__container" style="background-image: url(./assets/image/bg2.jpg);">
+  <div class="home__guide">
+    <div class="home__caption">Xin vui lòng nhập số tiền cần rút</div>
+    <div class="home__notice">(Ấn Enter để tiếp tục, Cancel để huỷ)</div>
+
+
+    <table class="home__details">
+      <tr>
+        <td>Số dư TK :</td>
+        <td>{{_tranferBalance | number }} VND</td>
+      </tr>
+      <tr>
+        <td>Số tiền :</td>
+        <td>
+          <input type="text" class="input" [(ngModel)]="_receiveMoney" #myinput (input)="checkValidMoney(myinput.value)"
+            onkeypress="return ((event.charCode !=8 && event.charCode ==0) || (event.charCode >= 48 && event.charCode <= 57))" />
+          VND
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2" class="home__mess" [ngClass]="{'error': _isValidMoney == false}"
+          *ngIf=" _isValidMoney == false && _receiveMoney != ''">
+          {{_messError}}</td>
+
+        <td colspan="2" class="home__mess" [ngClass]="{'succes': _isValidMoney == true}"
+          *ngIf=" _isValidMoney == true && _receiveMoney != ''">
+          {{_messSucces}}</td>
+      </tr>
+    </table>
+
+  </div>
+</div>

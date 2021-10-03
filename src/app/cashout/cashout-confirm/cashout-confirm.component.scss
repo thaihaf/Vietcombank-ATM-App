@@ -1,0 +1,16 @@
+@import "../../../styles.scss";
+
+.cashout-confirm__container {
+  @include backgroundStyle();
+  padding-top: 13rem;
+
+  @include baseStyle();
+  td{
+    text-align: left;
+    padding: 0.6rem 2rem;
+  }
+  td:first-child  {
+    padding: 0 2rem;
+  }
+
+}
